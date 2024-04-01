@@ -10,7 +10,12 @@ const Navigation = () => {
         <li>
           <Link to="/">Home</Link>
         </li>
-        {/* Add more navigation links here if needed */}
+        <li>
+          <Link to="./RPS.js">rps</Link>
+        </li>
+        <li>
+          <Link to="/TicTacToe">TicTacToe</Link>
+        </li>
       </ul>
     </nav>
   );
