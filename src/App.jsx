@@ -11,7 +11,6 @@ function App() {
   return (
     <>
       <div>
-          {/* <img src={reactLogo} className="logo react" alt="React logo" /> */}
           <Navigation/>
           <h1>Rock Paper Scissors</h1> 
       </div>
