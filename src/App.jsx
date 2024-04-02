@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import { WelcomeScreen as Welcome } from './screens/WelcomeScreen'
 import Game from './screens/GameScreen'
+import Navigation from './components/Navigation'
 
 function App() {
   const [name, setName] = useState(`Bearcat`)
@@ -11,6 +12,7 @@ function App() {
     <>
       <div>
           {/* <img src={reactLogo} className="logo react" alt="React logo" /> */}
+          <Navigation/>
           <h1>Rock Paper Scissors</h1> 
       </div>
       {

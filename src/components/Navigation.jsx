@@ -1,7 +1,8 @@
 // components/Navigation.js
-
+// Serves as a Navigation bar
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 
 const Navigation = () => {
   return (
@@ -11,7 +12,7 @@ const Navigation = () => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="./RPS.js">rps</Link>
+          <Link to="./App.jsx">RPS</Link>
         </li>
         <li>
           <Link to="/TicTacToe">TicTacToe</Link>
