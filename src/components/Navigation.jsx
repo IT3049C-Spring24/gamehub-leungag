@@ -13,10 +13,10 @@ const Navigation = () => {
           <Link to="/rps-react">Home</Link>
         </li>
         <li>
-          <Link to="/App">RPS</Link>
+          <Link to="/rps-react/App">RPS</Link>
         </li>
         <li>
-          <Link to="/TicTacToe">TicTacToe</Link>
+          <Link to="/rps-react/TicTacToe">TicTacToe</Link>
         </li>
       </ul>
     </nav>
