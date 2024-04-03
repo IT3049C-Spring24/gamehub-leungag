@@ -1,11 +1,13 @@
 import Navigation from "../components/Navigation";
+import Game from "../components/Board";
 
 
 function TicTacToe(){
     return(
         <>
         <Navigation/>
-        <h1>This page will be TicTacToe</h1>
+        <h1>TicTacToe</h1>
+        <Game />
         </>
     )
 }
