@@ -18,6 +18,9 @@ const Navigation = () => {
         <li>
           <Link to="/rps-react/TicTacToe">TicTacToe</Link>
         </li>
+        <li>
+          <Link to="/rps-react/Wordle">Wordle</Link>
+        </li>
       </ul>
     </nav>
   );
