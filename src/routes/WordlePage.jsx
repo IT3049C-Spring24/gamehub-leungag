@@ -1,17 +1,15 @@
-// Home page of the TicTacToe
-
 import Navigation from "../components/Navigation";
 import Game from "../components/Board";
 
 
-function TicTacToe(){
+function WordlePage(){
     return(
         <>
         <Navigation/>
-        <h1>TicTacToe</h1>
-        <Game /> {/*TicTacToe Board game */}
+        <h1>Wordle</h1>
+        
         </>
     )
 }
 
-export default TicTacToe;
+export default WordlePage;
