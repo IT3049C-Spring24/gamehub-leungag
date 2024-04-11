@@ -1,5 +1,5 @@
 import Navigation from "../components/Navigation";
-import Game from "../components/Board";
+import WordleBoard from "../components/WordleBoard";
 
 
 function WordlePage(){
@@ -7,6 +7,7 @@ function WordlePage(){
         <>
         <Navigation/>
         <h1>Wordle</h1>
+        <WordleBoard />
         
         </>
     )
