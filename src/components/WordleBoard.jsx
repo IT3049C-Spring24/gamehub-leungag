@@ -1,31 +1,33 @@
 import { useEffect, useState } from "react"
 
 
-function WordleBoard(){
-    const [solution, setSolution] = useState(null)
+function WordleBoard() {
+    const [solution, setSolution] = useState(null);
 
+    useState(() => {
+        fetchRandomWord();
+    }, []);
 
-    return(
+    async function fetchRandomWord() {
+        try {
+            const response = await fetch('https://it3049c-hangman.fly.dev/');
+            if (!response.ok) {
+                throw new Error('Failed to fetch random word');
+            }
+            const data = await response.json();
+            console.log(data);
+            setSolution(data.word);
+        } catch (error) {
+            console.error('Error fetching random word:', error);
+        }
+    }
+
+    return (
         <>
-            <h1>bord</h1> 
-            {solution && <div>Solution is {setSolution}</div>}
+            <h1>Wordle Board</h1>
+            {solution && <div>Solution is {solution}</div>}
         </>
-    )
+    );
 }
 
-
-async function getRandomWord(){
-    useState (() => {
-        fetch('https://it3049c-hangman.fly.dev/')
-            .then(res=> res.json())
-            .then(json => {
-                console.log(json)
-                const wordFetch = json
-                setSolution(wordFetch.word)
-            })
-    })
-}
-
-
-
-export default WordleBoard
+export default WordleBoard;
