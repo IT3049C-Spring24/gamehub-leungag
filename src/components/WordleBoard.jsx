@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 
 function WordleBoard() {
     const [solution, setSolution] = useState(null);
 
-    useState(() => {
+    useState(() => { /*Get random word through fetch function*/ 
         fetchRandomWord();
     }, []);
 
@@ -23,9 +23,10 @@ function WordleBoard() {
     }
 
     return (
+        // Page renders here
         <>
             <h1>Wordle Board</h1>
-            {solution && <div>Solution is {solution}</div>}
+            {solution && <div>Solution is {solution}</div>} 
         </>
     );
 }
