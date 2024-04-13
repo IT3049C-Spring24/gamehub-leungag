@@ -7,10 +7,10 @@ export default function Wordle({ solution }){
     useEffect(()=> {
         window.addEventListener('keyup', handleKeyup)
 
-        return () =>  windows.removeEventListenter('keyup', handleKeyup) // detaches event listener
-    },[handleKeyup]) // dependency
+        return () =>  window.removeEventListener('keyup', handleKeyup) // detaches event listener, prevents a load of event listener
+    },[handleKeyup]) // [] is for the handleKeyup dependency
 
     return(
-        <div>Wordle</div>
+        <div>currentGuess - {currentGuess}</div>
     )
 }

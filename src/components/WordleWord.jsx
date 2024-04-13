@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Wordle from "./WordleUI";
 
-
+//fetch word 
 function WordleWord() {
     const [solution, setSolution] = useState(null);
 
@@ -27,7 +27,7 @@ function WordleWord() {
         // Page renders here
         <>
             <h1>Wordle Board</h1>
-            {solution && <Wordle solution={solution}/>} 
+            {solution && <Wordle solution={solution}/>} {/*Only show when there is a solution */}
         </>
     );
 }
