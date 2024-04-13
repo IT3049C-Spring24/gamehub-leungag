@@ -1,5 +1,5 @@
 import Navigation from "../components/Navigation";
-import WordleBoard from "../components/WordleBoard";
+import WordleWord from "../components/WordleWord";
 
 
 function WordlePage(){
@@ -7,7 +7,7 @@ function WordlePage(){
         <>
         <Navigation/>
         <h1>Wordle</h1>
-        <WordleBoard />
+        <WordleWord /> {/*Generates Random words*/}
         
         </>
     )
