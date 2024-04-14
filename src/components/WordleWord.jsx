@@ -16,7 +16,7 @@ function WordleWord() {
                 throw new Error('Failed to fetch random word');
             }
             const data = await response.json();
-            console.log(data);
+            console.log("The word is: ", data);
             setSolution(data.word);
         } catch (error) {
             console.error('Error fetching random word:', error);
