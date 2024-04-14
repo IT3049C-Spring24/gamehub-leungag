@@ -1,6 +1,7 @@
 // TicTacToe logic and functions
 
 import { useState } from "react";
+import '../assets/TicTacToe.css'
 
 function Square({ value, onSquareClick }) {
   return (
