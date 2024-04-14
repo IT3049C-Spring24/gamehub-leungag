@@ -1,11 +1,11 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Wordle from "./WordleUI";
 
 //fetch word 
 function WordleWord() {
     const [solution, setSolution] = useState(null);
 
-    useState(() => { /*Get random word through fetch function*/ 
+    useEffect(() => { /*Get random word through fetch function*/ 
         fetchRandomWord();
     }, []);
 
@@ -16,7 +16,7 @@ function WordleWord() {
                 throw new Error('Failed to fetch random word');
             }
             const data = await response.json();
-            console.log("The word is: ", data);
+            console.log("The word is: ", data.word);
             setSolution(data.word);
         } catch (error) {
             console.error('Error fetching random word:', error);
