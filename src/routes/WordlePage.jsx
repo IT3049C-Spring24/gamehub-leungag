@@ -1,7 +1,7 @@
 import Navigation from "../components/Navigation";
 import WordleWord from "../components/WordleWord";
 
-
+// Main (Parent) component 
 function WordlePage(){
     return(
         <>

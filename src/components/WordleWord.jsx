@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import Wordle from "./WordleUI";
-
+// jsx file 1 of 3
 //fetch word 
 function WordleWord() {
     const [solution, setSolution] = useState(null);

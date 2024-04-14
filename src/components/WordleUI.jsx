@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import useWordle from "./useWordle"
-
+// jsx file 2 of 3
 export default function Wordle({ solution }){
     const {currentGuess, handleKeyup} = useWordle(solution) // Getting information from useWordle.jsx
 
@@ -11,6 +11,9 @@ export default function Wordle({ solution }){
     },[handleKeyup]) // [] is for the handleKeyup dependency
 
     return(
+        <>
+        <div>Solution - {solution}</div>
         <div>currentGuess - {currentGuess}</div>
+        </>
     )
 }
