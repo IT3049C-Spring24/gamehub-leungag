@@ -6,8 +6,8 @@ export default function Row( {guess, currentGuess}) {
     if(guess){ // take each letter in the guess to output in a square. No value then give empty row
         return (
             <div className="row past">
-                {guess.map((l,i) => (
-                    <div key={i} className={l.color}>{l.key}</div>
+                {guess.map((letter,index) => (
+                    <div key={index} className={letter.color}>{letter.key}</div>
                 ))}
             </div>
         )
