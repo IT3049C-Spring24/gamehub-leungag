@@ -47,8 +47,8 @@ const useWordle = (solution) => {
             newGuesses[turn] = formattedGuess
             return newGuesses
         }) 
-        setHistory((preHistory) => { 
-            return [...preHistory, currentGuess] // Add inputed guess to be stored into an array
+        setHistory((prevHistory) => { 
+            return [...prevHistory, currentGuess] // Add inputed guess to be stored into an array
         })
         setTurn((prevTurn) => {
             return prevTurn + 1
@@ -67,18 +67,18 @@ const useWordle = (solution) => {
                 return
             }
             //do not allow duplicate words
-        if(history.includes(currentGuess)){ // if true look at history and not add the word
-            console.log('You already tried that word')
-            return
-        }
-            // check word for 5 char
-        if(currentGuess.length !== 5){
-            console.log('word must be five chars long')
-            return
-        }
-        const formatted = formatGuess() // function called if the 3 if-statement above are bypassed
-        console.log(formatted)
-        addnewGuess()
+            if(history.includes(currentGuess)){ // if true look at history and not add the word
+                console.log('You already tried that word')
+                return
+            }
+                // check word for 5 char
+            if(currentGuess.length !== 5){
+                console.log('word must be five chars long')
+                return
+            }
+            const formatted = formatGuess() // function called if the 3 if-statement above are bypassed
+            console.log(formatted)
+            addnewGuess(formatted)
         }
 
         if(key ==='Backspace'){ // delete input wiht backspace
