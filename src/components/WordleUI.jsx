@@ -8,12 +8,20 @@ export default function Wordle({ solution }){
     useEffect(()=> {
         window.addEventListener('keyup', handleKeyup)
 
-        return () =>  window.removeEventListener('keyup', handleKeyup) // detaches event listener, prevents a load of event listener
-    },[handleKeyup]) // [] is for the handleKeyup dependency
+        if(isCorrect){ // Ends the game, prevents input
+            console.log('You win')
+            window.removeEventListener('keyup', handleKeyup)
+        }
 
-    useEffect(()=>{
-        console.log(guesses,turn,isCorrect)
-    }, [guesses, turn, isCorrect]) // Any changes in the value the dependency reruns the function
+        if(turn > 5){
+            console.log('out of guesses')
+            window.removeEventListener('keyup', handleKeyup)
+        }
+
+        return () =>  window.removeEventListener('keyup', handleKeyup) // detaches event listener, prevents a load of event listener
+    },[handleKeyup, isCorrect, turn]) // [] is for the handleKeyup and isCorrect dependency
+
+    
 
     return(
         <>
