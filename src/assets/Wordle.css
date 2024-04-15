@@ -29,6 +29,6 @@
 }
 
 .row > div.yellow{
-    background: yellow;
-    border-color: yellow;
+    background: rgb(177, 177, 2);
+    border-color: rgb(175, 175, 10);
 }
