@@ -3,8 +3,8 @@ import { useState } from 'react'
 const useWordle = (solution) => {
     const [turn, setTurn] = useState(0)
     const [currentGuess, setCurrentGuess] = useState('')
-    const [guesses, setGuesses] = useState([]) // the guess are in an array
-    const [history, setHistory] = useState(['hello']) // guess is a string. check for duplicate
+    const [guesses, setGuesses] = useState([...Array(6)]) // the guess are in an array
+    const [history, setHistory] = useState([]) // guess is a string. check for duplicate
     const [isCorrect, setIsCorrect] = useState(false)
 
     // Format the guess into array of letters
@@ -37,8 +37,23 @@ const useWordle = (solution) => {
 
     // update state of guess if it is correct
     // add one turn state
-    const addnewGuess = () =>{
-
+    const addnewGuess = (formattedGuess) =>{
+        if(currentGuess === solution){
+            setIsCorrect(true)
+        }
+        // update guesses based on previous value
+        setGuesses((prevGuesses) =>{
+            let newGuesses = [...prevGuesses]
+            newGuesses[turn] = formattedGuess
+            return newGuesses
+        }) 
+        setHistory((preHistory) => { 
+            return [...preHistory, currentGuess] // Add inputed guess to be stored into an array
+        })
+        setTurn((prevTurn) => {
+            return prevTurn + 1
+        })
+        setCurrentGuess('') // Reset the current guess
     }
 
     // handle  keyup event and track current guess (input for keyboard)
@@ -63,6 +78,7 @@ const useWordle = (solution) => {
         }
         const formatted = formatGuess() // function called if the 3 if-statement above are bypassed
         console.log(formatted)
+        addnewGuess()
         }
 
         if(key ==='Backspace'){ // delete input wiht backspace
