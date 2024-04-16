@@ -6,3 +6,5 @@ export default defineConfig({
   plugins: [react()],
   base: '/rps-react/',
 })
+
+// '/rps-react/'

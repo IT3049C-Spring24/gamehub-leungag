@@ -1,10 +1,27 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+// Pages would render here
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+import './index.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './routes/HomePage.jsx'
+import TicTacToe from './routes/TicTacToe.jsx'
+import WordlePage from './routes/WordlePage.jsx';
+import NumGuess from './routes/NumGuess.jsx'
+
+ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes> 
+        <Route path="/rps-react" element={<HomePage/>}/>
+        <Route path='/rps-react/App' element={<App/>}/>
+        <Route path='/rps-react/TicTacToe' element={<TicTacToe/>}/>
+        <Route path='/rps-react/Wordle' element={<WordlePage/>}/>
+        <Route path='/rps-react/NumGuess' element={<NumGuess/>}/>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
-)
+  document.getElementById('root')
+);
+
