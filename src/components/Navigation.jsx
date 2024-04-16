@@ -21,6 +21,9 @@ const Navigation = () => {
         <li>
           <Link to="/rps-react/Wordle">Wordle</Link>
         </li>
+        <li>
+          <Link to="/rps-react/NumGuess">Number Guessing</Link>
+        </li>
       </ul>
     </nav>
   );

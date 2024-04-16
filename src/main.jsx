@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './routes/HomePage.jsx'
 import TicTacToe from './routes/TicTacToe.jsx'
 import WordlePage from './routes/WordlePage.jsx';
+import NumGuess from './routes/NumGuess.jsx'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,6 +18,7 @@ ReactDOM.render(
         <Route path='/rps-react/App' element={<App/>}/>
         <Route path='/rps-react/TicTacToe' element={<TicTacToe/>}/>
         <Route path='/rps-react/Wordle' element={<WordlePage/>}/>
+        <Route path='/rps-react/NumGuess' element={<NumGuess/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
